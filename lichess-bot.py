@@ -233,7 +233,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
         def __init__(self, room):
             self.room = room
     opponent = game.black.name if game.white.name == user_profile["username"] else game.white.name
-    conversation.send_reply(SendLine('player'), f'Hi,I'm {me}!Coded by @Servan5635')
+    conversation.send_reply(SendLine('player'), f'Coded by @Servan5635')
     conversation.send_reply(SendLine('player'), f'Good Luck {opponent}!')
     conversation.send_reply(SendLine('player'), f'Type !help for list of commands I can support to.Thanks for playing with me')
     conversation.send_reply(SendLine('spectator'), f'Coded by @Servan5635')                        
