@@ -233,8 +233,11 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
         def __init__(self, room):
             self.room = room
     opponent = game.black.name if game.white.name == user_profile["username"] else game.white.name
-    conversation.send_reply(SendLine('player'), f'Made by @prajeethishere, All The Best @{opponent}')
-    conversation.send_reply(SendLine('spectator'), f'Made by @prajeethishere, Good Luck @{opponent}')
+    conversation.send_reply(SendLine('player'), f'Hi,I'm {me}!Coded by @Servan5635')
+    conversation.send_reply(SendLine('player'), f'Good Luck {opponent}!')
+    conversation.send_reply(SendLine('player'), f'Type !help for list of commands I can support to.Thanks for playing with me')
+    conversation.send_reply(SendLine('spectator'), f'Coded by @Servan5635')                        
+    conversation.send_reply(SendLine('spectator'), f'Thanks for spectating me.Type !help for list of commands I can support to')
     
     variant=game.perf_name
 
@@ -276,7 +279,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                     start_time = time.perf_counter_ns()
                     fake_thinking(config, board, game)
                     print_move_number(board)
-                    correspondence_disconnect_time = correspondence_cfg.get("disconnect_time", 300)
+                    correspondence_disconnect_time = correspondence_cfg.get("disconnect_time", 1)
 
                     best_move = get_book_move(board, polyglot_cfg)
                     if best_move is None:
